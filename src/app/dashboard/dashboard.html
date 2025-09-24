@@ -1,0 +1,43 @@
+<nav class="navbar">
+  <div class="navbar-container">
+    <a routerLink="/" class="brand">EMS</a>
+    <ul class="nav-links">
+      <li><a routerLink="/login">Login</a></li>
+      <li><a routerLink="/register">Register</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="dashboard">
+    <div class="header">
+        <h2>Welcome to EMS</h2>
+    </div>
+    <div class="add">
+        <a routerLink="/create">Add Employee</a>
+    </div>
+    <table>
+        <tbody>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Mobile</th>
+                <th>Department</th>
+                <th>Actions</th>
+            </tr>
+            <tr *ngFor="let employee of allEmployees;">
+                <td>{{employee.id}}</td>
+                <td>{{employee.name}}</td>
+                <td>{{employee.email}}</td>
+                <td>{{employee.mobile}}</td>
+                <td>{{employee.department}}</td>
+                <td>
+                    <a [routerLink]="['/view', employee.id]" id="view">View</a>
+                    <a [routerLink]="['/update', employee.id]" id="update">Update</a>
+                    <a [routerLink]="['/delete', employee.id]" id="delete" (click)="delete(employee.id)">Delete</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <!-- <div class="center">{{message}}</div> -->
+</div>

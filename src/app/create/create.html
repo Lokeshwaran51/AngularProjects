@@ -1,0 +1,23 @@
+<div class="myForm">
+  <div class="header">
+    <h2>Create Employee Form</h2>
+  </div>
+
+  <form [formGroup]="createForm" (ngSubmit)="onSubmit()">
+    <input type="text" placeholder="Name" formControlName="name"
+           [ngClass]="{'invalid': createForm.get('name')?.invalid && createForm.get('name')?.touched}">
+    
+    <input type="email" placeholder="Email" formControlName="email"
+           [ngClass]="{'invalid': createForm.get('email')?.invalid && createForm.get('email')?.touched}">
+    
+    <input type="text" placeholder="Mobile" formControlName="mobile"
+           [ngClass]="{'invalid': createForm.get('mobile')?.invalid && createForm.get('mobile')?.touched}">
+    
+    <input type="text" placeholder="Department" formControlName="department"
+           [ngClass]="{'invalid': createForm.get('department')?.invalid && createForm.get('department')?.touched}">
+    
+    <button type="submit">Create</button>
+    <a routerLink="/dashboard">Go to Dashboard</a>
+    <p>{{ message }}</p>
+  </form>
+</div>

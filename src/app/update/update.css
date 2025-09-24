@@ -1,0 +1,40 @@
+*{
+    font-family: sans-serif;
+}
+.myForm{
+    width: 70%;
+    margin: 20px auto;
+    box-shadow: 1px 3px 4px;
+    padding: 10px;
+}
+.header{
+    width: 100%;
+    text-align: center;
+    background-color: gainsboro;
+    position: relative;
+    display: block;
+    padding: 8px 0px;
+}
+.myForm form{
+    width: 90%;
+    margin: 30px auto;
+}
+.myForm form input{
+    width: 90%;
+    display: block;
+    padding: 14px;
+    margin: 20px 0px;
+    border-radius: 5px;
+}
+.myForm form button{
+    padding: 10px 30px;
+    cursor: pointer;
+    background-color: rgb(56, 82, 130);
+    font-size: 18px;
+    border: none;
+    color: white;
+    border-radius: 5px;
+}
+a{
+    margin: 0px 10px;
+}
