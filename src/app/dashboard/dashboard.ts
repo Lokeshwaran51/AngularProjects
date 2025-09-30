@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Auth } from '../services/auth';
-import { Employee, EmployeeResponse } from '../models/employee.model'; // import the interfaces
+import { Employee } from '../models/employee.model'; // import the interfaces
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
@@ -21,7 +21,7 @@ export class Dashboard implements OnInit {
     this.auth.getAllEmployees().subscribe((res: any) => {
       this.allEmployees = res.employees; // ✅ now TypeScript knows about employees
       console.log(this.allEmployees);
-    });
+    }); 
   }
 
   delete(id: any): void {
