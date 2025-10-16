@@ -1,18 +1,45 @@
 {
   "employees": [
-      {
-          "id": "1",
-          "name": "Employee1",
-          "email": "employee1@gmail.com",
-          "mobile": 9034123334,
-          "department": "XYZ"
-      },
-      {
-          "id": "2",
-          "name": "Employee2",
-          "email": "employee2@gmail.com",
-          "mobile": 9344635486,
-          "department": "IT"
-      }
+    {
+      "id": "1",
+      "name": "Employee2",
+      "email": "employee2@gmail.com",
+      "mobile": 9344635486,
+      "department": "IT"
+    },
+    {
+      "id": "2",
+      "name": "Loki",
+      "email": "loki@gmail.com",
+      "mobile": 9344635486,
+      "department": "Development"
+    },
+    {
+      "name": "Naveen",
+      "email": "naven@gmail.com",
+      "mobile": "9778786667",
+      "department": "Developer",
+      "id": "3"
+    }
+  ],
+  "admins": [
+    {
+      "id": "1",
+      "name": "Admin",
+      "email": "admin@gmail.com",
+      "password": "admin123"
+    },
+    {
+      "id": "addc",
+      "fullName": "Mohammed Arsath",
+      "email": "marsath@gmail.com",
+      "password": "arsath@1234"
+    },
+    {
+      "id": "d675",
+      "fullName": "JeffeyPannuel",
+      "email": "jpannuel@gmail.com",
+      "password": "jp@12345"
+    }
   ]
 }

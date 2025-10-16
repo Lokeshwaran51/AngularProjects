@@ -1,0 +1,72 @@
+.login-container {
+  height: 100vh;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(/assets/images/Login.jpg);
+}
+
+/* Login card */
+.login-card {
+  width: 380px;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  background: white;
+  text-align: center;
+}
+
+/* Card header */
+.login-card h2 {
+  margin-bottom: 2.5rem;
+  font-weight: 600;
+  color: #212121;
+}
+
+/* Optional subtitle inside card */
+.login-card .subtitle {
+  font-size: 0.9rem;
+  color: #616161;
+  margin-bottom: 1.5rem;
+}
+
+/* Full-width input fields or buttons */
+.login-card .full-width {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+/* Login button */
+.login-card .login-btn {
+  width: 100%;
+  padding: 0.8rem;
+  font-weight: 500;
+  border-radius: 8px;
+  text-transform: none;
+}
+
+/* Login footer */
+.login-card .login-footer {
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.login-card .login-footer a {
+  color: #3f51b5;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.login-card .login-footer a:hover {
+  text-decoration: underline;
+}
+
+/* Google button */
+.login-card .google-btn {
+  margin-top: 25px;
+  width: 100%;
+}

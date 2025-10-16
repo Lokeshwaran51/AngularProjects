@@ -15,13 +15,16 @@
           "options": {
             "browser": "src/main.ts",
             "tsConfig": "tsconfig.app.json",
-            "assets": [
-              {
-                "glob": "**/*",
-                "input": "public"
-              }
-            ],
+           "assets": [
+                  {
+                    "glob": "**/*",
+                    "input": "src/assets",
+                    "output": "assets"
+                  }
+                ],
             "styles": [
+              "src/custom-theme.scss",
+              "node_modules/@fortawesome/fontawesome-free/css/all.min.css",
               "src/styles.css"
             ],
             "server": "src/main.server.ts",

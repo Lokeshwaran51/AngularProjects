@@ -3,11 +3,14 @@ import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } 
 import { Router, RouterModule } from '@angular/router';
 import { Auth } from '../services/auth';
 import { CommonModule } from '@angular/common';
+import { MatCardModule } from '@angular/material/card';
+import { MatFormField } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 @Component({
   selector: 'app-create',
   standalone: true,
-  imports: [RouterModule, ReactiveFormsModule, CommonModule],
+  imports: [RouterModule, ReactiveFormsModule, CommonModule, MatCardModule, MatFormField, MatInputModule],
   templateUrl: './create.html',
   styleUrls: ['./create.css']  
 })
@@ -32,11 +35,13 @@ export class Create {
   }
 
   onSubmit(): void {  
-    const name = this.createForm.get('name')?.value;
-    console.log('Name entered:', name);
+    /* const name = this.createForm.get('name')?.value;
+    console.log('Name entered:', name); */
+    const newEmployee = this.createForm.value; // no 'id'
+    console.log('Creating employee:', newEmployee);
 
     if (this.createForm.valid) {
-      this.auth.createEmployee(this.createForm.value).subscribe({
+      this.auth.createEmployee(newEmployee).subscribe({
         next: () => {
           this.message = "Employee created successfully!";
           this.router.navigate(['/dashboard']);

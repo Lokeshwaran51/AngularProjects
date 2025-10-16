@@ -1,48 +1,56 @@
-*{
-    font-family: sans-serif;
-}
-.myForm{
-    width: 70%;
-    margin: 20px auto;
-    box-shadow: 1px 3px 4px;
-    padding: 10px;
-}
-.header{
-    width: 100%;
-    text-align: center;
-    background-color: gainsboro;
-    position: relative;
-    display: block;
-    padding: 8px 0px;
-}
-.myForm form{
-    width: 90%;
-    margin: 30px auto;
-}
-.myForm form input{
-    width: 90%;
-    display: block;
-    padding: 14px;
-    margin: 20px 0px;
-    border-radius: 5px;
-}
-.myForm form button{
-    padding: 10px 30px;
-    cursor: pointer;
-    background-color: rgb(56, 82, 130);
-    font-size: 18px;
-    border: none;
-    color: white;
-    border-radius: 5px;
-}
-a{
-    margin: 0px 10px;
+.create-employee-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #e3f2fd, #bbdefb);
 }
 
-input.invalid {
-  border: 2px solid red;
+.create-employee-card {
+  width: 400px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  background: #fff;
 }
 
-p{
-    color: red;
+.form-title {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  color: #3f51b5;
+}
+
+.full-width {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.message {
+  text-align: center;
+  margin-top: 1rem;
+  font-weight: 500;
+  color: green;
+}
+
+.create-btn{
+      width: 40%;
+      padding: 0.8rem;
+      font-weight: 500;
+      border-radius: 8px;
+      text-transform: none;
+}
+
+.gotoDashboard-btn{
+      width: 40%;
+      padding: 0.8rem;
+      font-weight: 500;
+      border-radius: 8px;
+      text-transform: none;
 }

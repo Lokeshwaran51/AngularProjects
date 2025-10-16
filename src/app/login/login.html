@@ -1,0 +1,51 @@
+<div class="login-container">
+  <mat-card class="login-card">
+    <h2 class="login-title">Login</h2>
+
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <!-- Email Field -->
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" placeholder="Enter your email">
+        <mat-error *ngIf="loginForm.get('email')?.touched && loginForm.get('email')?.hasError('required')">
+          Email is required
+        </mat-error>
+        <mat-error *ngIf="loginForm.get('email')?.touched && loginForm.get('email')?.hasError('email')">
+          Enter a valid email
+        </mat-error>
+      </mat-form-field>
+
+      <!-- Password Field -->
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Password</mat-label>
+        <input matInput type="password" formControlName="password" placeholder="Enter your password">
+        <mat-error *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.hasError('required')">
+          Password is required
+        </mat-error>
+        <mat-error *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.hasError('minlength')">
+          Password must be at least 6 characters
+        </mat-error>
+      </mat-form-field>
+
+      <!-- Login Button -->
+      <button mat-flat-button color="primary" class="login-btn full-width" type="submit" [disabled]="loginForm.invalid">
+        Login
+      </button>
+    </form>
+
+    <!-- OR Separator -->
+    <div class="or-separator">OR</div>
+
+    <!-- Google Login Button -->
+    <button mat-stroked-button color="warn" class="google-btn full-width" (click)="signInWithGoogle()">
+      <img src="assets/images/google-login.png" alt="Google Logo" width="24" style="margin-right: 8px;" />
+      Sign in with Google
+    </button>
+
+    <!-- Signup Link -->
+    <div class="login-footer">
+      <span>Don't have an account?</span>
+      <a routerLink="/signup">Sign Up</a>
+    </div>
+  </mat-card>
+</div>
