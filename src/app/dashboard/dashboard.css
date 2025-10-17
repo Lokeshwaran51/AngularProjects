@@ -1,68 +1,81 @@
 .dashboard-toolbar {
-  position: sticky;
-  top: 0;
-  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
 }
 
 .app-title {
-  font-size: 1.3rem;
   font-weight: 600;
-  color: white;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.header-bold{
+  font-weight: 600;
+}
+
+.mat-sort-header{
+  font-weight: 600;
+}
+
+.center-text{
+  font-weight: 600;
 }
 
 .spacer {
   flex: 1 1 auto;
 }
 
-.dashboard-container {
-  padding: 2rem;
+.welcome-text {
   display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-right: 15px;
+}
+
+.dashboard-container {
+  padding: 20px;
+}
+
+.stats-container {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.stat-card {
+  flex: 1;
+  min-width: 200px;
+  display: flex;
+  align-items: center;
   justify-content: center;
-  background: #f3f4f6;
-  background-image: url(/assets/images/Dashboard_Background.jpg);
-  min-height: calc(100vh - 64px);
+  gap: 10px;
+  font-weight: 500;
+  background-color: #f8f9fa;
+  border-left: 5px solid #3f51b5;
 }
 
-.dashboard-card {
-  width: 100%;
-  max-width: 1440px;
-  padding: 1.5rem;
-  border-radius: 12px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+.table-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
 }
 
-mat-card-title {
-  font-size: 1.4rem;
-  font-weight: 600;
-  color: #3f51b5;
-  text-align: center;
-  margin-bottom: 1rem;
+.search-field {
+  width: 300px;
+}
+
+.add-btn {
+  margin-top: 8px;
 }
 
 .full-width-table {
   width: 100%;
-  border-radius: 8px;
-  overflow: hidden;
-}
-
-table {
-  border-spacing: 0;
-}
-
-th.mat-header-cell {
-  background-color: #e3f2fd;
-  color: #3f51b5;
-  font-weight: 600;
-}
-
-td.mat-cell, th.mat-header-cell {
-  text-align: left;
-  padding: 12px 16px;
-}
-
-tr.mat-row:hover {
-  background-color: #f1f5fb;
-  transition: background-color 0.3s ease;
 }
 
 .center-text {
@@ -71,11 +84,6 @@ tr.mat-row:hover {
 
 .center {
   text-align: center;
-  margin-top: 1rem;
-  color: green;
-  font-weight: 500;
-}
-
-button[mat-raised-button], button[mat-stroked-button] {
-  margin-left: 10px;
+  margin-top: 20px;
+  color: gray;
 }

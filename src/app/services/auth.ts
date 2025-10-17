@@ -2,21 +2,21 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map, Observable, of, switchMap, throwError } from 'rxjs';
 import { catchError } from 'rxjs/internal/operators/catchError';
+import { Employee } from '../models/employee.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class Auth {
-  
   //private baseUrl = '/db.json';
   private baseUrl = 'http://localhost:3000/employees';
   private jwtUrl = 'http://localhost:3000/admins';
   
   constructor(private http:HttpClient){
   }
-  
-  getAllEmployees(){
-    return this.http.get(this.baseUrl);
+
+   getAllEmployees(): Observable<Employee[]> {
+    return this.http.get<Employee[]>(this.baseUrl);
   }
 
   getEmployeeById(id:any){
@@ -31,8 +31,8 @@ export class Auth {
     return this.http.put(this.baseUrl + "/" + id, obj)
   }
 
-  deleteEmployee(id:any){
-    return this.http.delete(this.baseUrl + "/" + id);
+  deleteEmployee(id: number): Observable<any> {
+    return this.http.delete(`${this.baseUrl}/${id}`);
   }
   
 

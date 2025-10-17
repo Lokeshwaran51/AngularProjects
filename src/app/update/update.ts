@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ActivatedRoute, Route, Router, RouterModule } from '@angular/router';
 import { Auth } from '../services/auth';
-import { MatCard, MatCardModule } from '@angular/material/card';
+import { MatCardModule } from '@angular/material/card';
 import { MatFormField } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
@@ -13,7 +13,7 @@ import { MatIconModule } from '@angular/material/icon';
   standalone:true,
   imports: [CommonModule, ReactiveFormsModule, RouterModule, MatCardModule, MatFormField, MatInputModule, MatIconModule],
   templateUrl: './update.html',
-  styleUrl: './update.css'
+  styleUrls: ['./update.css']
 })
 export class Update implements OnInit{
   constructor(private route:ActivatedRoute, private fb:FormBuilder, private auth:Auth, private router:Router){}

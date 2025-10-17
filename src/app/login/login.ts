@@ -8,6 +8,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { Auth } from '../services/auth';
+import { ProfileService } from '../services/profile-service';
 
 declare const google: any;
 
@@ -33,7 +34,8 @@ export class Login implements OnInit {
   constructor(
     private fb: FormBuilder,
     private auth: Auth,
-    private router: Router
+    private router: Router,
+    private profileService: ProfileService
   ) {}
 
   /* ngOnInit(): void {
@@ -79,7 +81,12 @@ export class Login implements OnInit {
       next: (res: any) => {
         if (res.length) {
           alert('Login successful!');
-          localStorage.setItem('user', JSON.stringify(res[0]));
+          const payload = JSON.parse(atob(res.split('.')[1]));
+          const user = payload.name; 
+          this.profileService.setUser(user);
+          console.log('User:' + user);
+          localStorage.setItem('user', user)
+          //localStorage.setItem('user', JSON.stringify(res[0]));
           this.router.navigate(['/dashboard']);
         } else {
           alert('Invalid credentials');

@@ -1,0 +1,11 @@
+<div class="profile-toolbar" *ngIf="user; else guest">
+      <img *ngIf="user.picture" [src]="user.picture" class="profile-avatar" />
+      <span>{{ user.name }}</span>
+      <button mat-icon-button color="warn" (click)="logout()" matTooltip="Logout">
+        <mat-icon>logout</mat-icon>
+      </button>
+    </div>
+
+    <ng-template #guest>
+      <span>Guest</span>
+    </ng-template>
