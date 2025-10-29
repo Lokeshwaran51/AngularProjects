@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { ActivatedRoute, Route, Router, RouterModule } from '@angular/router';
+import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { Auth } from '../services/auth';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormField } from '@angular/material/form-field';
@@ -56,13 +56,10 @@ onSubmit(): void {
     this.auth.updateEmployee(this.empId, this.updateForm.value).subscribe(res => {
       console.log('Updated data:', this.updateForm.value);
       this.message = "Employee updated successfully!";
-      // Example: navigate to dashboard
       this.router.navigate(['/dashboard']);
     });
   } else {
     this.message = "Please fill all required fields.";
   }
 }
-
-
 }

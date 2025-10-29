@@ -14,7 +14,6 @@ import { MatInputModule } from '@angular/material/input';
 
 import { Auth } from '../services/auth';
 import { Employee } from '../models/employee.model';
-import { Profile } from '../profile/profile';
 import { ProfileService } from '../services/profile-service';
 
 @Component({
@@ -50,8 +49,7 @@ export class Dashboard implements OnInit {
 
   constructor(
     private auth: Auth,
-    private cd: ChangeDetectorRef,
-    private profileService: ProfileService
+    private cd: ChangeDetectorRef
   ) {}
 
   ngOnInit(): void {

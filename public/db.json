@@ -73,6 +73,12 @@
       "name": "Loki",
       "email": "loki@gmail.com",
       "password": "Loki@1234"
+    },
+    {
+      "id": "6",
+      "name": "Vijay",
+      "email": "vijay@gmail.com",
+      "password": "vijay@1234"
     }
   ]
 }
