@@ -35,9 +35,7 @@ export class Create {
   }
 
   onSubmit(): void {  
-    /* const name = this.createForm.get('name')?.value;
-    console.log('Name entered:', name); */
-    const newEmployee = this.createForm.value; // no 'id'
+    const newEmployee = this.createForm.value;
     console.log('Creating employee:', newEmployee);
 
     if (this.createForm.valid) {

@@ -7,33 +7,33 @@
       <mat-form-field appearance="outline" class="full-width">
         <mat-label>Name</mat-label>
         <input matInput placeholder="Enter name" formControlName="name">
-        <mat-error *ngIf="updateForm.get('name')?.invalid && updateForm.get('name')?.touched">
-          Name is required
-        </mat-error>
+        @if (updateForm.get('name')?.invalid && updateForm.get('name')?.touched) {
+          <mat-error>Name is required</mat-error>
+        }
       </mat-form-field>
 
       <mat-form-field appearance="outline" class="full-width">
         <mat-label>Email</mat-label>
         <input matInput type="email" placeholder="Enter email" formControlName="email">
-        <mat-error *ngIf="updateForm.get('email')?.invalid && updateForm.get('email')?.touched">
-          Enter a valid email
-        </mat-error>
+       @if (updateForm.get('email')?.invalid && updateForm.get('email')?.touched) {
+        <mat-error>Invalid email address</mat-error>
+      }
       </mat-form-field>
 
       <mat-form-field appearance="outline" class="full-width">
         <mat-label>Mobile</mat-label>
         <input matInput placeholder="Enter mobile number" formControlName="mobile">
-        <mat-error *ngIf="updateForm.get('mobile')?.invalid && updateForm.get('mobile')?.touched">
-          Mobile number is required
-        </mat-error>
+        @if (updateForm.get('mobile')?.invalid && updateForm.get('mobile')?.touched){
+          <mat-error>Mobile number is required</mat-error>
+        }
       </mat-form-field>
 
       <mat-form-field appearance="outline" class="full-width">
         <mat-label>Department</mat-label>
         <input matInput placeholder="Enter department" formControlName="department">
-        <mat-error *ngIf="updateForm.get('department')?.invalid && updateForm.get('department')?.touched">
-          Department is required
-        </mat-error>
+        @if(updateForm.get('department')?.invalid && updateForm.get('department')?.touched){
+          <mat-error>Department is required</mat-error>
+        }
       </mat-form-field>
 
       <div class="button-group">
@@ -46,7 +46,10 @@
         </button>
       </div>
 
-      <p class="message" *ngIf="message">{{ message }}</p>
+      @if(message){
+        <p class="message">{{ message }}</p>
+      }
+      
     </form>
   </mat-card>
 </div>

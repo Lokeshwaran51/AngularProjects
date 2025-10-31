@@ -38,37 +38,19 @@ export class Login implements OnInit {
     private profileService: ProfileService
   ) {}
 
-  /* ngOnInit(): void {
-    this.loginForm = this.fb.group({
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(6)]]
-    });
-
-    // Initialize Google Identity Services
-    if (typeof google !== 'undefined') {
-      google.accounts.id.initialize({
-        client_id: '114607439195-536ekqgoi9mnfcel8hv1l6q7o2ibrftu.apps.googleusercontent.com',
-        callback: (response: any) => this.handleGoogleResponse(response)
-      });
-    } else {
-      console.error('Google Identity Services not loaded.');
-    }
-  } */
-
-    async ngOnInit() {
+   ngOnInit() {
     this.loginForm = this.fb.group({
     email: ['', [Validators.required, Validators.email]],
     password: ['', [Validators.required, Validators.minLength(6)]]
   });
 
-  await this.loadGoogleScript(); // wait for Google script to load
+   this.loadGoogleScript();
 
   google.accounts.id.initialize({
     client_id: '114607439195-536ekqgoi9mnfcel8hv1l6q7o2ibrftu.apps.googleusercontent.com',
     callback: (response: any) => this.handleGoogleResponse(response)
   });
 }
-
 
   onSubmit(): void {
     if (!this.loginForm.valid) {
@@ -84,7 +66,6 @@ export class Login implements OnInit {
           const payload = JSON.parse(atob(res.split('.')[1]));
           const user = payload.name; 
           this.profileService.setUser(user);
-          console.log('User:' + user);
           localStorage.setItem('user', user)
           //localStorage.setItem('user', JSON.stringify(res[0]));
           this.router.navigate(['/dashboard']);
@@ -102,7 +83,6 @@ export class Login implements OnInit {
       const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
       const user = JSON.parse(atob(base64));
 
-      // Call your auth service (no subscribe needed if it returns void)
       this.auth.signInWithGoogle(user);
 
       alert('Google login successful!');

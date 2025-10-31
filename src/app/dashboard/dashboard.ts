@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, OnInit, ViewChild } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit, signal, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
@@ -39,7 +39,8 @@ export class Dashboard implements OnInit {
   displayedColumns: string[] = ['id', 'name', 'email', 'mobile', 'department', 'actions'];
   dataSource = new MatTableDataSource<Employee>();
   message = '';
-  user = '';
+  //user=signal<string|null>(null);
+  user='';
 
   totalEmployees = 0;
   departmentCount = 0;
@@ -49,12 +50,17 @@ export class Dashboard implements OnInit {
 
   constructor(
     private auth: Auth,
+    private Profile: ProfileService,
     private cd: ChangeDetectorRef
   ) {}
 
   ngOnInit(): void {
     this.loadEmployees();
-    this.user = localStorage.getItem('user') || 'Guest';
+    const userSignal = this.Profile.getUser();
+    /* this.user.set(userSignal());
+    console.log("UserSignal: " +userSignal); */
+    this.user= localStorage.getItem('user') || 'Guest';
+    console.log("LocalStorage: " + localStorage.getItem('user') || 'Guest');
   }
 
   loadEmployees(): void {
@@ -64,7 +70,6 @@ export class Dashboard implements OnInit {
         this.totalEmployees = data.length;
         this.departmentCount = new Set(data.map(e => e.department)).size;
 
-        // Set paginator and sort after data load
         this.dataSource.paginator = this.paginator;
         this.dataSource.sort = this.sort;
 

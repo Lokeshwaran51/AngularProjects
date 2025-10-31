@@ -16,15 +16,15 @@ import { ProfileService } from '../services/profile-service';
 export class Profile {
   user: any = null;
 
-  constructor(private auth: ProfileService) {}
+  constructor(private profile: ProfileService) {}
 
   ngOnInit() {
-    this.user = this.auth.getUser();
-    this.auth.userChanged.subscribe(u => this.user = u);
+    this.user = this.profile.getUser();
+    /* this.auth.userChanged.subscribe(u => this.user = u); */
   }
 
   logout() {
-    this.auth.clearUser();
+    this.profile.clearUser();
     localStorage.removeItem('user');
   }
 }

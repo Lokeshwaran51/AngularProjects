@@ -35,7 +35,6 @@ export class Auth {
     return this.http.delete(`${this.baseUrl}/${id}`);
   }
   
-
   SignUp(obj:any):Observable<any>{
     return this.http.post(this.jwtUrl, obj);
   }
@@ -77,33 +76,8 @@ private generateToken(payload: any): string {
     return localStorage.getItem('jwtToken');
   }
 
- /* signInWithGoogle(user: any) {
-  return this.http.get<any[]>(`${this.jwtUrl}?email=${user.email}`).pipe(
-    switchMap(users => {
-      if (users.length) {
-        // Existing user
-        const token = btoa(JSON.stringify({ email: users[0].email, id: users[0].id }));
-        localStorage.setItem('token', token);
-        return of(token); 
-      } else {
-        // New user: return POST observable
-        const newUser = { fullName: user.name, email: user.email, password: '' };
-        return this.http.post<any>(this.jwtUrl, newUser).pipe(
-          map(createdUser => {
-            const token = btoa(JSON.stringify({ email: createdUser.email, id: createdUser.id }));
-            localStorage.setItem('token', token);
-            return token;
-          })
-        );
-      }
-    })
-  );
-} */
-
    signInWithGoogle(user: any): void {
     console.log('Google user:', user);
     localStorage.setItem('google_user', JSON.stringify(user));
   }
-
-
 }

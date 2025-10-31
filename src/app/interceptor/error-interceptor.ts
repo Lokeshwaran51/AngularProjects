@@ -34,7 +34,7 @@ export const errorInterceptor: HttpInterceptorFn = (req, next) => {
               ErrorMsg=`Unexpected error: ${error.status}`;
         }
       }
-       console.error('Error intercepted:', ErrorMsg);
+      console.error('Error intercepted:', ErrorMsg);
       alert(ErrorMsg); 
       return throwError(() => new Error(ErrorMsg));
     })

@@ -4,15 +4,15 @@
       "id": "1",
       "name": "Loki",
       "email": "loki@gmail.com",
-      "mobile": 9344635486,
+      "mobile": "9344635486",
       "department": "Development"
     },
     {
+       "id": "2",
       "name": "Naveen",
       "email": "naven@gmail.com",
-      "mobile": "9778786667",
-      "department": "Developer",
-      "id": "2"
+      "mobile": "9778786668",
+      "department": "Developer"
     },
     {
       "id": "3",
